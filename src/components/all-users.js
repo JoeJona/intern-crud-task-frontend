@@ -32,32 +32,32 @@ function AllUser() {
   }
     
   useEffect(() => {
-      Axios.get(`${localHost}/get-all-users`).then((res) => {
+      Axios.get(`${deployHost}/get-all-users`).then((res) => {
           setAllUserList(res.data);
         });
     }, []);
     
   const saveNewUser= () => {
-      Axios.post(`${localHost}/add-user`, {name: name, phoneNumber: phoneNumber, email: email, hobbies: hobbies});
+      Axios.post(`${deployHost}/add-user`, {name: name, phoneNumber: phoneNumber, email: email, hobbies: hobbies});
         setShowForm(!showForm);
         window.location.reload();
       }
   
    const updateUser = (id) => {
-      Axios.put(`${localHost}/update-user/${id}`, {name: name, phoneNumber: phoneNumber, email: email, hobbies: hobbies});
+      Axios.put(`${deployHost}/update-user/${id}`, {name: name, phoneNumber: phoneNumber, email: email, hobbies: hobbies});
       setShowUpdateForm(!showUpdateForm);
       window.location.reload();
     }
 
   const deleteUser = (id) => {
-      Axios.delete(`${localHost}/delete-user/${id}`);
+      Axios.delete(`${deployHost}/delete-user/${id}`);
       setDeleteConfirm(!deleteConfirm);
       window.location.reload();
       }
   
   const getSelectedUsers = () => {
       if (usersList.length > 0) {
-        Axios.post(`${localHost}/send-email`, {userList: usersList});
+        Axios.post(`${deployHost}/send-email`, {userList: usersList});
         usersList = [];
         window.location.reload();
       }
