@@ -6,7 +6,7 @@ import Axios from 'axios';
 function AllUser() {
 
   const localHost = 'http://localhost:5000';
-  const deployHost = 'https://intern-crud-task-backend-production.up.railway';
+  // const deployHost = 'https://intern-crud-task-backend-production.up.railway';
 
   const [showForm, setShowForm] = useState(false);
   const [showUpdateForm, setShowUpdateForm] = useState(false);
@@ -32,7 +32,7 @@ function AllUser() {
   }
     
   useEffect(() => {
-      Axios.get(`${deployHost}/get-all-users`).then((res) => {
+      Axios.get(`${localHost}/get-all-users`).then((res) => {
           setAllUserList(res.data);
         });
     }, []);
