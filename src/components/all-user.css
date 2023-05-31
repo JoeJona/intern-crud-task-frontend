@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.container {
+    padding: 100px 100px;
+    width: 100%;
+    position: fixed;
+}
+.add_form {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    width: 30%;
+}
+.delete_confirm {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    width: 30%;
+    text-align: center;
+}
+.sp {
+    margin-top: 15px;
+    color: red;
+}
+.close {
+    float: right;
+    margin-right: -20px;
+    font-size: large;
+}
+.save {
+    border: none;
+    color: #fff;
+    background-color: #12b8e2;
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 20px;
+    width: 25%;
+    cursor: pointer;
+}
+.send-div {
+    float: right;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.send {
+    border: none;
+    color: #fff;
+    background-color: #12b8e2;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 20px;
+    width: 10%;
+    cursor: pointer;
+}
+.send-h3 {
+    margin-top: 40px;
+    margin-right: 60px;
+}
+form {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+}
+form h2 {
+    margin-bottom: 10px;
+}
+form label {
+    margin-bottom: 10px;
+    padding: 8px;
+    margin-right: 5px;
+}
+form input {
+    margin-bottom: 10px;
+    padding: 8px;
+    margin-right: 5px;
+    width: 60%;
+}
+.que {
+    display: flex;
+    justify-content: flex-end;
+}
+.conf {
+    display: flex;
+    justify-content: space-around;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+.new_user_btn {
+    border: none;
+    color: #fff;
+    background-color: #12b8e2;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 10%;
+    float: right;
+  }
+.new_user_btn:hover, .save:hover, .send:hover {
+    color: #d1e618;
+    scale: 1.03;
+    cursor: pointer;
+  }
+.update_user_btn, .delete_user_btn {
+    border: none;
+    color: #fff;
+    background-color: #1265e2;
+    border-radius: 5px;
+    padding: 7px;
+    width: 40%;
+    margin-left: 10px;
+    margin-bottom: 2px;
+    cursor: pointer;
+  }
