@@ -59,8 +59,8 @@ function AllUser() {
       if (usersList.length > 0) {
         Axios.post(`${deployHost}/send-email`, {userList: usersList});
         usersList = [];
+        window.location.reload();
       }
-      window.location.reload();
     }
 
   return (
