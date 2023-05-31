@@ -5,6 +5,9 @@ import Axios from 'axios';
 
 function AllUser() {
 
+  const localHost = 'http://localhost:5000';
+  const deployHost = 'https://intern-crud-task-backend-production.up.railway';
+
   const [showForm, setShowForm] = useState(false);
   const [showUpdateForm, setShowUpdateForm] = useState(false);
   const [deleteConfirm, setDeleteConfirm] = useState(false);
@@ -29,35 +32,35 @@ function AllUser() {
   }
     
   useEffect(() => {
-      Axios.get("https://intern-crud-task-backend-production.up.railway.app/get-all-users").then((res) => {
+      Axios.get(`${deployHost}/get-all-users`).then((res) => {
           setAllUserList(res.data);
         });
     }, []);
     
   const saveNewUser= () => {
-      Axios.post("https://intern-crud-task-backend-production.up.railway.app/add-user", {name: name, phoneNumber: phoneNumber, email: email, hobbies: hobbies});
+      Axios.post(`${deployHost}/add-user`, {name: name, phoneNumber: phoneNumber, email: email, hobbies: hobbies});
         setShowForm(!showForm);
         window.location.reload();
       }
   
    const updateUser = (id) => {
-      Axios.put(`https://intern-crud-task-backend-production.up.railway.app/update-user/${id}`, {name: name, phoneNumber: phoneNumber, email: email, hobbies: hobbies});
+      Axios.put(`${deployHost}/update-user/${id}`, {name: name, phoneNumber: phoneNumber, email: email, hobbies: hobbies});
       setShowUpdateForm(!showUpdateForm);
       window.location.reload();
     }
 
   const deleteUser = (id) => {
-      Axios.delete(`https://intern-crud-task-backend-production.up.railway.app/delete-user/${id}`);
+      Axios.delete(`${deployHost}/delete-user/${id}`);
       setDeleteConfirm(!deleteConfirm);
       window.location.reload();
       }
   
   const getSelectedUsers = () => {
       if (usersList.length > 0) {
-        Axios.post("https://intern-crud-task-backend-production.up.railway.app/send-email", {userList: usersList});
+        Axios.post(`${deployHost}/send-email`, {userList: usersList});
         usersList = [];
+        window.location.reload();
       }
-      window.location.reload();
     }
 
   return (
