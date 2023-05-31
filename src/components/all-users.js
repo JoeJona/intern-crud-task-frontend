@@ -6,7 +6,7 @@ import Axios from 'axios';
 function AllUser() {
 
   const localHost = 'http://localhost:5000';
-  const deployHost = 'https://intern-crud-task-backend-production.up.railway';
+  // const deployHost = 'https://intern-crud-task-backend-production.up.railway';
 
   const [showForm, setShowForm] = useState(false);
   const [showUpdateForm, setShowUpdateForm] = useState(false);
