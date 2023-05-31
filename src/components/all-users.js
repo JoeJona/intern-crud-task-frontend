@@ -29,32 +29,32 @@ function AllUser() {
   }
     
   useEffect(() => {
-      Axios.get("http://localhost:5000/get-all-users").then((res) => {
+      Axios.get("https://intern-crud-task-backend-production.up.railway.app/get-all-users").then((res) => {
           setAllUserList(res.data);
         });
     }, []);
     
   const saveNewUser= () => {
-      Axios.post("http://localhost:5000/add-user", {name: name, phoneNumber: phoneNumber, email: email, hobbies: hobbies});
+      Axios.post("https://intern-crud-task-backend-production.up.railway.app/add-user", {name: name, phoneNumber: phoneNumber, email: email, hobbies: hobbies});
         setShowForm(!showForm);
         window.location.reload();
       }
   
    const updateUser = (id) => {
-      Axios.put(`http://localhost:5000/update-user/${id}`, {name: name, phoneNumber: phoneNumber, email: email, hobbies: hobbies});
+      Axios.put(`https://intern-crud-task-backend-production.up.railway.app/update-user/${id}`, {name: name, phoneNumber: phoneNumber, email: email, hobbies: hobbies});
       setShowUpdateForm(!showUpdateForm);
       window.location.reload();
     }
 
   const deleteUser = (id) => {
-      Axios.delete(`http://localhost:5000/delete-user/${id}`);
+      Axios.delete(`https://intern-crud-task-backend-production.up.railway.app/delete-user/${id}`);
       setDeleteConfirm(!deleteConfirm);
       window.location.reload();
       }
   
   const getSelectedUsers = () => {
       if (usersList.length > 0) {
-        Axios.post("http://localhost:5000/send-email", {userList: usersList});
+        Axios.post("https://intern-crud-task-backend-production.up.railway.app/send-email", {userList: usersList});
         usersList = [];
       }
       window.location.reload();
